@@ -36,12 +36,43 @@ plugins: [
       {
         normalSuffix: '/',
         indexSuffix: '/',
-        notFoundPath: '/404.html',
+        notFoundPath: '/404.html'
       },
     ],
   ],
 ```
+### version 1.1 
 
+增加配置containDirs
+可设定只当文件夹全路径，其余只保留文件路径
+
+```
+plugins: [
+    [
+      'vuepress-plugin-shortlink',
+      {
+        normalSuffix: '/',
+        indexSuffix: '/',
+        notFoundPath: '/404.html',
+        containDirs: ['/books']
+      },
+    ],
+  ],
+```
+地址展示
+```
+source: /books/a-book.md
+permalink: /books/261f97f7/
+
+source: /hello-word.md
+permalink: /b1d4025b/
+
+source: /say/hello-word.md
+permalink: /b1d4025b/
+
+source: /books/computer/a-book.md
+permalink: 261f97f7/
+```
 
 ## ThanksFor
 
